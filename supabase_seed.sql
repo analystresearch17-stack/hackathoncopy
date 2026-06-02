@@ -114,8 +114,6 @@ insert into config (id, data) values (1, '{
 insert into judges (id, name, username, password, round_assignment) values
   (1, 'Himanshu', 'himanshu', 'judge123', 'both'),
   (2, 'Deepti', 'deepti', 'judge123', 'both'),
-  (3, 'Rahul', 'rahul', 'judge123', 'both'),
-  (4, 'Pushkar', 'pushkar', 'judge123', 'round_1')
 on conflict (username) do nothing;
 
 insert into criteria (id, key, label, max, tooltip, active) values
@@ -124,15 +122,4 @@ insert into criteria (id, key, label, max, tooltip, active) values
   (3, 'speed_of_delivery', 'Speed of Delivery', 10, 'Deployed, working product within the 10–15 day window', true),
   (4, 'day_plan', '30-60-90 Day Plan', 10, 'Credible roadmap with milestones, owners & metrics', true),
   (5, 'presentation_skills', 'Presentation skills', 20, 'How well the topic is discussed', true)
-on conflict do nothing;
-
-insert into participants (id, team_id, team_name, name, email, enterprise_id, primary_skill, member_type, project_name, project_lead, participation_type, team_members, registered_at, password) values
-  (1, 1, 'Dunder Mifflin AI', 'Michael Scott', 'michael.scott@company.com', 'EMP-00301', 'Product', 'Team Lead', 'David Wallace', 'Dunder Mifflin', 'team', '[{"name":"Dwight Schrute","enterprise_id":"EMP-00302","primary_skill":"Product","member_type":"Member"},{"name":"Pam Beesly","enterprise_id":"EMP-00303","primary_skill":"Design","member_type":"Member"},{"name":"Jim Halpert","enterprise_id":"EMP-00304","primary_skill":"Engineering","member_type":"Member"}]', '2026-04-17T09:11:20Z', 'Pass123'),
-  (2, 2, 'Akatsuki Labs', 'Itachi Uchiha', 'itachi.uchiha@company.com', 'EMP-00401', 'Product', 'Team Lead', 'Sharingan', 'Madara', 'team', '[{"name":"Konan","enterprise_id":"EMP-00402","primary_skill":"Design","member_type":"Member"},{"name":"Kisame Hoshigaki","enterprise_id":"EMP-00403","primary_skill":"Engineering","member_type":"Member"}]', '2026-04-17T09:13:46Z', 'Pass123'),
-  (3, 3, 'The Shōgun Protocol', 'Hermione Granger', 'hermione.granger@company.com', 'EMP-00201', 'Product', 'Team Lead', 'The Shōgun Protocol', 'Dumbledore', 'team', '[{"name":"Sherlock Holmes","enterprise_id":"EMP-00202","primary_skill":"Design","member_type":"Member"},{"name":"Lara Croft","enterprise_id":"EMP-00203","primary_skill":"Engineering","member_type":"Member"}]', '2026-04-17T09:16:55Z', 'Pass123'),
-  (4, 4, 'Hackers', 'Anuj Bidwai', 'anuj@gmail.com', 'emp1021', 'Product', 'Team Lead', 'Snyops', 'Libha', 'team', '[{"name":"Satyam","enterprise_id":"emp1290","primary_skill":"Product","member_type":"Member"}]', '2026-04-17T09:42:49Z', 'Pass123')
-on conflict do nothing;
-
-insert into resources (id, name, filename, description, type, size, uploaded) values
-  (1, 'Resource 1776317184546', 'resource_1776317184546.pdf', '', 'PDF', '0.9 MB', '16 Apr')
 on conflict do nothing;
